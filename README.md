@@ -1,2 +1,2 @@
 # menu-js
-Vanilla Javascript tutorial project #6 presented by John Smilga
+Vanilla Javascript tutorial project #7 presented by John Smilga
