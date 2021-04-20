@@ -222,8 +222,8 @@ Menu
   max-width: 25rem;
 }
 .photo {
-  object-fit: contain;
-  height: auto;
+  object-fit: cover;
+  height: 200px;
   border: 0.25rem solid var(--clr-gold);
   border-radius: var(--radius);
 }

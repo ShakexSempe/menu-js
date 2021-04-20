@@ -1,12 +1,11 @@
-//items
 const menu = [
   {
     id: 1,
-    title: "Munch Up",
-    category: "shakes",
-    price: 16.99,
-    img: "./images/munch-logo.jpg",
-    desc: `Wholesome meals. Delicious Cakes.. Munch Up`,
+    title: "buttermilk pancakes",
+    category: "breakfast",
+    price: 15.99,
+    img: "./images/item-1.jpeg",
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
     id: 2,
@@ -66,36 +65,35 @@ const menu = [
   },
   {
     id: 9,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 45.00,
-    img: "./images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    title: "quarantine buddy",
+    category: "shakes",
+    price: 16.99,
+    img: "./images/item-9.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
-  
 ];
 
-const sectionCenter = document.querySelector('.section-center');
+const sectionCenter = document.querySelector(".section-center");
 
-//when page loads
-window.addEventListener('DOMContentLoaded' , () => {
-  let displayMenu = menu.map(item => {
+window.addEventListener("DOMContentLoaded", function () {
+  let displayMenu = menu.map(function (item) {
     // console.log(item);
 
     return `<article class="menu-item">
-    <img src=${item.img} class="photo" alt=${item.title} />
-    <div class="item-info">
-      <header>
-        <h4>${item.title}</h4>
-        <h4 class="price">R${item.price}</h4>
-      </header>
-      <p class="item-text">
-        ${item.desc}
-      </p>
-    </div>
-  </article>`
+          <img src=${item.img} alt=${item.title} class="photo" />
+          <div class="item-info">
+            <header>
+              <h4>${item.title}</h4>
+              <h4 class="price">$${item.price}</h4>
+            </header>
+            <p class="item-text">
+              ${item.desc}
+            </p>
+          </div>
+        </article>`;
   });
   displayMenu = displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu;
+  console.log(displayMenu);
 
-})
+  sectionCenter.innerHTML = displayMenu;
+});
