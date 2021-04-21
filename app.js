@@ -2,11 +2,11 @@
 const menu = [
   {
     id: 1,
-    title: "Munch Up",
-    category: "shakes",
-    price: 16.99,
-    img: "./images/munch-logo.jpg",
-    desc: `Wholesome meals. Delicious Cakes.. Munch Up`,
+    title: "buttermilk pancakes",
+    category: "breakfast",
+    price: 45.00,
+    img: "./images/item-1.jpeg",
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
   },
   {
     id: 2,
@@ -66,20 +66,54 @@ const menu = [
   },
   {
     id: 9,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 45.00,
-    img: "./images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    title: "Munch Up",
+    category: "shakes",
+    price: 70.00,
+    img: "./images/munch-logo.jpg",
+    desc: `Wholesome meals. Delicious Cakes.. Munch Up`,
   },
+  
   
 ];
 
 const sectionCenter = document.querySelector('.section-center');
+const filterButtons = document.querySelectorAll('.filter-btn');
 
 //when page loads
 window.addEventListener('DOMContentLoaded' , () => {
-  let displayMenu = menu.map(item => {
+  displayMenuItems(menu)
+});
+
+//filter items
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', e => {
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(menuItem => {
+
+      if (menuItem.category === category) {
+        return menuItem
+      }
+    });
+
+    if (category === 'all') {
+      displayMenuItems(menu)
+    }
+    else {
+      displayMenuItems(menuCategory);
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+displayMenuItems = (menuItems) => {
+  let displayMenu = menuItems.map(item => {
     // console.log(item);
 
     return `<article class="menu-item">
@@ -97,5 +131,4 @@ window.addEventListener('DOMContentLoaded' , () => {
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
-
-})
+}

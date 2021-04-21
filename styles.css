@@ -222,7 +222,7 @@ Menu
   max-width: 25rem;
 }
 .photo {
-  object-fit: contain;
+  object-fit: cover;
   height: auto;
   border: 0.25rem solid var(--clr-gold);
   border-radius: var(--radius);
