@@ -26,4 +26,5 @@ new array created with filter() to return filtered menu items from the original 
 else return displayMenuItems from the filtered menuCategory array
 -displayMenuItems(menuCategory);
 
-
+### dynamic data 
+-
