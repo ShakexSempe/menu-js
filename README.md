@@ -26,5 +26,15 @@ new array created with filter() to return filtered menu items from the original 
 else return displayMenuItems from the filtered menuCategory array
 -displayMenuItems(menuCategory);
 
-### dynamic data 
--
+
+### dynamically add new id buttons
+//get unique categories
+//iterate over categories return button
+// make sure to select buttons when they are available
+
+-remove buttons from index as they will be added dynamically
+
+-inside  window event listener we set up a varibale holding the unique categories from the menu array.
+-we return an array of the unique categories using the reduce() of the menu array.
+-in the reduce mehtod the logic is as follows: if() values(the array returned) does not have the (!value.includes) item.category from the new array then add the category (.push()) to new array('all');
+-if the value does have the item.category in the all array the just return the 'values';   

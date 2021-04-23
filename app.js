@@ -67,7 +67,7 @@ const menu = [
   {
     id: 9,
     title: "Munch Up",
-    category: "shakes",
+    category: "brand",
     price: 70.00,
     img: "./images/munch-logo.jpg",
     desc: `Wholesome meals. Delicious Cakes.. Munch Up`,
@@ -76,13 +76,30 @@ const menu = [
   
 ];
 
+//get unique categories
+//iterate over categories return button
+// make sure to select buttons when they are available
+
+
+
+
 const sectionCenter = document.querySelector('.section-center');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
 //when page loads
 window.addEventListener('DOMContentLoaded' , () => {
-  displayMenuItems(menu)
-});
+  displayMenuItems(menu);
+  //reduce() takes 2 parameters in the callback() and also requires an initial value
+  //check if item category is already in the 'all' array
+  const categories = menu.reduce((values, item)=> {
+    if(!values.includes(item.category)) {
+      values.push(item.category);
+    }
+    return values;
+  } , ['all']);
+  console.log(categories);
+  });
+
 
 //filter items
 filterButtons.forEach(btn => {
