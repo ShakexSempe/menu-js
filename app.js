@@ -84,6 +84,8 @@ const menu = [
 
 
 const sectionCenter = document.querySelector('.section-center');
+const container = document.querySelector('.btn-container');
+
 const filterButtons = document.querySelectorAll('.filter-btn');
 
 //when page loads
@@ -103,9 +105,10 @@ window.addEventListener('DOMContentLoaded' , () => {
     type="button" 
     data-id=${category}>
     ${category}
-    </button> -->`
+    </button>`
   }).join("");
-  console.log(categoryButtons)
+
+  container.innerHTML = categoryButtons
   });
 
 
