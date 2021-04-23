@@ -97,7 +97,15 @@ window.addEventListener('DOMContentLoaded' , () => {
     }
     return values;
   } , ['all']);
-  console.log(categories);
+  //load category buttons by wrapping each category value in the html 
+  const categoryButtons = categories.map(category => {
+    return `<button class="filter-btn" 
+    type="button" 
+    data-id=${category}>
+    ${category}
+    </button> -->`
+  }).join("");
+  console.log(categoryButtons)
   });
 
 
